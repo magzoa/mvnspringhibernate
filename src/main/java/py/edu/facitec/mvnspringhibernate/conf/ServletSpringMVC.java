@@ -1,5 +1,8 @@
 package py.edu.facitec.mvnspringhibernate.conf;
 
+import javax.servlet.Filter;
+
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -21,5 +24,12 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		// TODO Auto-generated method stub
 		return new String[]{"/"};
 	}
+	
+	// Tener habilitado en el EntityManager durante las requisiciones.
+			@Override
+			protected Filter[] getServletFilters() {
+			return new Filter[]{
+			new OpenEntityManagerInViewFilter()};
+			}
 
 }

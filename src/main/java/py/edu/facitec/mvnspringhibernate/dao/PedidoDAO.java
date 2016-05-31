@@ -6,22 +6,21 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import py.edu.facitec.mvnspringhibernate.model.Cliente;
+import py.edu.facitec.mvnspringhibernate.model.Pedido;
+import py.edu.facitec.mvnspringhibernate.model.Producto;
 
 @Repository
-public class ClienteDAO extends DaoGenerico<Cliente> {
+public class PedidoDAO extends DaoGenerico<Pedido> {
 	
-	public ClienteDAO() {
-		super(Cliente.class);
+	public PedidoDAO() {
+		super(Pedido.class);
 		// TODO Auto-generated constructor stub
 	}
 
 	@PersistenceContext
 	private EntityManager manager;
 	
-	public void save(Cliente cliente){
-		manager.persist(cliente);
-		
-	}
+	
 
 	@Override
 	protected EntityManager getEntityManager() {

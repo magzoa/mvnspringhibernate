@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<h2>Hola Mundo SpringMVC</h2>
-
+Hola JSP
 
 </body>
 </html>
